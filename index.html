@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Officer Status Board</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="board">
+    <header>
+      <h1>Officer Status Board</h1>
+      <p>Track daily status updates, task progress, and follow-up actions.</p>
+    </header>
+
+    <section class="tabs" aria-label="Status board tabs">
+      <div class="tab-buttons" role="tablist" aria-label="Board sections">
+        <button class="tab-button active" id="tab-daily" role="tab" aria-selected="true" aria-controls="panel-daily" data-target="daily">
+          Officer Status Daily
+        </button>
+        <button class="tab-button" id="tab-tasks" role="tab" aria-selected="false" aria-controls="panel-tasks" data-target="tasks">
+          Tasks &amp; Activities
+        </button>
+        <button class="tab-button" id="tab-follow-up" role="tab" aria-selected="false" aria-controls="panel-follow-up" data-target="follow-up">
+          Follow Up Activities
+        </button>
+      </div>
+
+      <article class="tab-panel active" id="panel-daily" role="tabpanel" aria-labelledby="tab-daily" data-panel="daily">
+        <h2>Officer Status Daily</h2>
+        <div class="card-grid">
+          <section class="card">
+            <h3>Today's Team Snapshot</h3>
+            <ul>
+              <li>On Duty: 7 officers</li>
+              <li>Field Assignment: 4 officers</li>
+              <li>Office/Desk: 2 officers</li>
+              <li>Leave/Rest Day: 1 officer</li>
+            </ul>
+          </section>
+          <section class="card">
+            <h3>Daily Notes</h3>
+            <textarea rows="8" placeholder="Write daily status notes here..."></textarea>
+          </section>
+        </div>
+      </article>
+
+      <article class="tab-panel" id="panel-tasks" role="tabpanel" aria-labelledby="tab-tasks" data-panel="tasks" hidden>
+        <h2>Tasks &amp; Activities</h2>
+        <div class="card-grid">
+          <section class="card">
+            <h3>Current Tasks</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Owner</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Community Patrol</td>
+                  <td>Officer Santos</td>
+                  <td><span class="status in-progress">In Progress</span></td>
+                </tr>
+                <tr>
+                  <td>Incident Report Review</td>
+                  <td>Officer Cruz</td>
+                  <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>Station Equipment Check</td>
+                  <td>Officer Lim</td>
+                  <td><span class="status done">Done</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section class="card">
+            <h3>Task Remarks</h3>
+            <textarea rows="8" placeholder="Add activity updates and blockers..."></textarea>
+          </section>
+        </div>
+      </article>
+
+      <article class="tab-panel" id="panel-follow-up" role="tabpanel" aria-labelledby="tab-follow-up" data-panel="follow-up" hidden>
+        <h2>Follow Up Activities</h2>
+        <div class="card-grid">
+          <section class="card">
+            <h3>Follow-Up List</h3>
+            <ul>
+              <li>Call witness for statement confirmation — Due 3:00 PM</li>
+              <li>Submit pending paperwork to records desk — Due 4:30 PM</li>
+              <li>Coordinate with barangay captain for tomorrow's route plan</li>
+            </ul>
+          </section>
+          <section class="card">
+            <h3>Next Steps</h3>
+            <textarea rows="8" placeholder="Add follow-up outcomes and next actions..."></textarea>
+          </section>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
